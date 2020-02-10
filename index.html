@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="script.js"></script>
+    <source>
+    <title>Document</title>
+</head>
+<body onload="test()">
+
+    <article>
+        <h1>SCP Character Identification</h1>
+        <section>
+            <h2>Instructions</h2>
+            <p>
+                In the following fields please insert the names separated by a &quot;,&quot;(comma) EX: James, Reginald, Ronald
+            </p>
+            <p>
+                In the secondary field insert the descriptions for the characters you described in the same order and separated by an enter(break line) or  &quot;,&quot;(comma) a comma.
+            </p>
+        </section>
+        <section>
+            <h2>Submission</h2>
+            <form action="">
+                <label for="characterNum">How many characters are there in the story?</label>
+                <input type="number" name="characterNum" required>
+                <br>
+                <label for="Character">Character Names:</label>
+                <!-- <input type="text" name="Character" id="" required> -->
+                <textarea name="Character" id="" cols="30" rows="10"required></textarea>
+                <br>
+                <label for="Description">Character Description:</label>
+                <!-- <input type="text" name="Description" id="" required> -->
+                <textarea name="Description" id="" cols="30" rows="10" required></textarea>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section>
+            <h2>Information</h2>
+            <p>The story you will be analysis is:</p>
+            <p id ="title"></p>
+            <p id= "scpNum"></p>
+            <a id ="link"></a>
+        </section>
+        <section onload="test()">
+            <h2>Stroy Plain text</h2>
+            <p id = "plaintext"></p>
+        </section>
+    </article>
+
+    
+</body>
+</html>
