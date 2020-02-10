@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <source>
     <title>Document</title>
 </head>
 <body onload="test()">
+    <div id = "return">
+        <a href="#submission">return to Submission</a>
+    </div>
+
+    <img src="" alt="">
+    <a href="http://">asdada</a>
 
     <article>
         <h1>SCP Character Identification</h1>
@@ -21,29 +28,29 @@
                 In the secondary field insert the descriptions for the characters you described in the same order and separated by an enter(break line) or  &quot;,&quot;(comma) a comma.
             </p>
         </section>
-        <section>
+        <section id="submission">
             <h2>Submission</h2>
-            <form action="">
+            <form id = "form" action="">
                 <label for="characterNum">How many characters are there in the story?</label>
-                <input type="number" name="characterNum" required>
-                <br>
+                <input type="number" name="characterNum" required min="1" max="20">
+
+                <div id = "formInput">
                 <label for="Character">Character Names:</label>
-                <!-- <input type="text" name="Character" id="" required> -->
-                <textarea name="Character" id="" cols="30" rows="10"required></textarea>
-                <br>
+                <input type="text" name="Character" id="" required>
+                
                 <label for="Description">Character Description:</label>
-                <!-- <input type="text" name="Description" id="" required> -->
                 <textarea name="Description" id="" cols="30" rows="10" required></textarea>
-                <br>
+                
+                </div>
                 <input type="submit" value="Submit">
             </form>
         </section>
         <section>
             <h2>Information</h2>
             <p>The story you will be analysis is:</p>
-            <p id ="title"></p>
-            <p id= "scpNum"></p>
             <a id ="link"></a>
+            <p id= "scpNum"></p>
+            
         </section>
         <section onload="test()">
             <h2>Stroy Plain text</h2>

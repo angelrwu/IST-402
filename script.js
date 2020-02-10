@@ -1,16 +1,44 @@
 function test(){
+    document.getElementsByName("characterNum")[0].addEventListener("input",function(){
+
+    var inputHTML = "";
+    for (let index = 0; index < Number(document.getElementsByName("characterNum")[0].value); index++) {
+        inputHTML = inputHTML.concat(`<label for="Character${index}">Character Names:</label>
+        <input type="text" name="Character${index}" id="" required>
+        
+        <label for="Description${index}">Character Description:</label>
+        <textarea name="Description${index}" id="" cols="30" rows="10" required></textarea>
+        <hr>`
+        );
+    }
+    console.log(document.getElementsByName("characterNum")[0].value);
+    document.getElementById("formInput").innerHTML = inputHTML;
+    })
+
     //Simulating the premise of having any link, sadly i have no clue how to get request from websites to get the html, or the JSON
     var stories = [story_01,story_02,story_03,story_04,story_05];
     //plain text formatting and clean up. Using Regular Expressions 
     let story = stories[Math.round(Math.random()*10)%5];
-    let test= JSON.stringify(story.text).replace(/\\n\\n/g, "<br><br>");
-    test= test.replace(/\\n/g, "<br><br>");
+    let test= JSON.stringify(story.text).replace(/\\n\\n/g, "<br><br>");//removes all \n\n and makes a br equivalent to an enter to maintain format
+    test= test.replace(/\\n/g, "<br><br>");//removes all \n and makes a br equivalent to an enter to maintain format
+    test= test.replace(/\\"/g, '"');//removes reformat all \" for quotes
+    test = test.replace(/rating[\s\S]*–x/, "");//removes the rating
+    test = test.substring(13,test.length-2);//cleans up the random beginning and end quotes ". 13 is to remove the extra <br> from formatting
+
 
     //Alters the page to input the text
-    document.getElementById("plaintext").innerHTML=test;
     document.getElementById("link").innerHTML= `<a href="${story.link}">${story.title}</a>`;
-    document.getElementById("title").innerHTML=story.title;
     document.getElementById("scpNum").innerHTML=story.scp_id;
+    document.getElementById("plaintext").innerHTML=test;
+
+    // const Http = new XMLHttpRequest();
+    // const url = 'http://www.scp-wiki.net/scp-177';
+    // Http.open("GET", url);
+    // Http.send();
+
+    // Http.onreadystatechange=(e)=>{
+    //     console.log(Http.responseText)
+    // }
 }
 
 //NOTE: due to a lack of file acces locally i need to store the JSON in the script
