@@ -15,28 +15,48 @@
     </div>
 
     <article>
-        <h1>SCP Character Identification</h1>
+        <h1>SCP Character Extraction</h1>
         <section>
             <h2>Instructions</h2>
             <p>
-                In the following fields please insert the names separated by a &quot;,&quot;(comma) EX: James, Reginald, Ronald
+                
             </p>
-            <p>
-                In the secondary field insert the descriptions for the characters you described in the same order and separated by an enter(break line) or  &quot;,&quot;(comma) a comma.
-            </p>
+            <ol>
+                <li>Read the story</li>
+                <li>Identify how many character are there and be sure as changing the number will reset the data</li>
+                <li>Insert the name of the story you read</li>
+                <li><strong>Name the character:</strong> it can be a person, location, object, idea,  nameless, etc. 
+                    <ul>
+                        <li>If nameless write <strong>"none"</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Describe the character:</strong> feel free to write anything, but if you need help here are a couple of thing to consider
+                    <ul>
+                        <li>Is it the main character</li>
+                        <li>Is the character a person, location, object, idea,  nameless or implied.</li>
+                        <li>Is the chracter conscious, logical, always follow certain rules or chaotic</li>
+                        <li>Is the chracter able to be manipulated or is manupilating others</li>
+                    </ul>
+                </li>
+
+            </ol>
         </section>
         <section id="submission">
             <h2>Submission</h2>
-            <form id = "form" action="">
+            <form id = "form" action="" method="">
                 <label for="characterNum">How many characters are there in the story?</label>
-                <input type="number" name="characterNum" required min="1" max="20">
+                <input type="number" name="characterNum" required min="1" max="20" placeholder="Number of characters">
+
+                <label for="verification">What is the name of the story?</label>
+                <input type="text" name="verification" min="1" max="20" placeholder="Name of the Story Ex: The Laughter, The Red Dot" required >
+                <hr>
 
                 <div id = "formInput">
-                <label for="Character">Character Names:</label>
-                <input type="text" name="Character" id="" required>
+                <label for="Character0">Character Name</label>
+                <input type="text" name="Character0" id="" placeholder="Character Name | Ex: none, SCP-131, James " required>
                 
-                <label for="Description">Character Description:</label>
-                <textarea name="Description" id="" cols="30" rows="10" required></textarea>
+                <label for="Description0">Character Description</label>
+                <textarea name="Description0" id="" cols="30" rows="15" placeholder="Character Description | Ex: it is an entity that is formless and spread as an idea or it is an ideology. Ex 2: it is a calm and planning man in who has the ability to teleport" required></textarea>
                 
                 </div>
                 <input type="submit" value="Submit">
@@ -45,13 +65,13 @@
         <section>
             <h2>Information</h2>
             <p>The story you will be analysis is:</p>
-            <a id ="link"></a>
-            <p id= "scpNum"></p>
+            <a id ="link"> Tittle</a>
+            <p id= "scpNum">SCP-###</p>
             
         </section>
         <section onload="test()">
             <h2>Stroy Plain text</h2>
-            <p id = "plaintext"></p>
+            <p id = "plaintext">Story</p>
         </section>
     </article>
 

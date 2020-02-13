@@ -1,21 +1,59 @@
 html{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    margin: 20%;
+    margin: 5% 20%;
 }
 
 h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
 
+form{
+    width: max-content;
+    margin: 0 auto;
+}
+
+
 form input,textarea{
     margin: 0 0 20px 0 ;
 }
 form *{
-    display: block;
+    display: block;   
 }
+
+form input[type=number],input[type=text], input[type=submit],textarea{
+    width: 430px;
+    border-radius: 7px;
+    border-color: black;
+    border-width: 1px;
+    padding: 7px;
+    resize: none;
+}
+
+form label{
+    position: relative;
+    position: absolute;
+    margin: -10px 0 0 10px;
+    padding: 0 0.5ch;
+    background-color: white;
+}
+
+form hr{
+    margin: 0px 0 30px 0;
+    border-color: black;
+    border-width: 1px;
+
+}
+
+form input[type = submit]{
+    width: 450px;
+    border: none;
+    background-color:rgb(126, 126, 126);
+}
+
 
 #return{
     left:85%;

@@ -2,12 +2,13 @@ function test(){
     document.getElementsByName("characterNum")[0].addEventListener("input",function(){
 
     var inputHTML = "";
-    for (let index = 0; index < Number(document.getElementsByName("characterNum")[0].value); index++) {
-        inputHTML = inputHTML.concat(`<label for="Character${index}">Character Names:</label>
-        <input type="text" name="Character${index}" id="" required>
+    for (let index = 0;index <= document.getElementsByName("characterNum")[0].getAttribute("max") & index < Number(document.getElementsByName("characterNum")[0].value); index++) {
+        inputHTML = inputHTML.concat(
+        `<label for="Character${index}">Character ${index + 1} Name</label>
+        <input type="text" name="Character${index}" id="" placeholder="Character Name | Ex: none, SCP-131, James " required>
         
-        <label for="Description${index}">Character Description:</label>
-        <textarea name="Description${index}" id="" cols="30" rows="10" required></textarea>
+        <label for="Description${index}">Character ${index + 1} Description</label>
+        <textarea name="Description${index}" id="" cols="30" rows="15" placeholder="Character Description | Ex: it is an entity that is formless and spread as an idea or it is an ideology. Ex 2: it is a calm and planning man in who has the ability to teleport" required></textarea>
         <hr>`
         );
     }
@@ -27,18 +28,9 @@ function test(){
 
 
     //Alters the page to input the text
-    document.getElementById("link").innerHTML= `<a href="${story.link}">${story.title}</a>`;
-    document.getElementById("scpNum").innerHTML=story.scp_id;
+    document.getElementById("link").innerHTML= `<p>Title: <a href="${story.link}">${story.title}</a></p>`;
+    document.getElementById("scpNum").innerHTML=`SCP-ID: ${story.scp_id}`;
     document.getElementById("plaintext").innerHTML=test;
-
-    // const Http = new XMLHttpRequest();
-    // const url = 'http://www.scp-wiki.net/scp-177';
-    // Http.open("GET", url);
-    // Http.send();
-
-    // Http.onreadystatechange=(e)=>{
-    //     console.log(Http.responseText)
-    // }
 }
 
 //NOTE: due to a lack of file acces locally i need to store the JSON in the script
